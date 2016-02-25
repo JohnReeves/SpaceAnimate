@@ -1,0 +1,208 @@
+#Space Worksheet 2
+
+![alt text](http://i.imgur.com/GwVqsqt.png "final image")
+
+##Task 1 - Setup
+
+- Either find your JSFiddle from last week (you need at least 1 planet to start this worksheet)
+- Or use [my JSFiddle](http://jsfiddle.net/Y662q/) (please open in a new tab in Google Chrome)
+
+Enable jQuery
+  - Top right - (Frameworks & Extensions)
+  - (might need to scroll a lot!)
+
+![alt text](http://imgur.com/lFkeo3h.png "turn on jQuery")
+
+##Task 2 - give all your planet shapes id's
+
+We need to give all our planet shapes an id attribute so we can access them using JavaScript
+
+e.g. my earth shape looks like 
+```xml
+<circle id="earth" cx="250" cy="100" r="10" fill="green" />
+```
+
+##Task 3 - let's start with the console
+
+- in the little window below your HTML (should say JavaScript)
+```javascript
+console.log("hello world");
+```
+
+- right click anywhere on your page - click Inspect Element
+- View the last tab "Console"
+- Click JSFiddle's Run button
+
+![alt text](http://imgur.com/nK8Nd7Q.png "chrome's console")
+
+
+##Task 4 - Functions
+
+In programming, we make things called functions which are just ways of grouping things together - for example you might have a function called `doHomework()` which would have things like `findBook` and `writeAnswers` in it.
+
+We're going to make a function say hello! to us!
+
+```javascript
+function movePlanets(){
+    
+    console.log("hello!");
+
+}
+
+```
+
+But wait! If we press run now, nothing happens? This is because we've not actually told the computer to run this function. We need to add the line `movePlanets();` below the squigley bracket. Now have a go at running it again!
+
+Try copying that one line of code and pasting it several times, what happens?
+
+##Task 5 - Loops
+
+##Timed wait
+
+There are two types of timed behaviour commonly used in animation, one is *wait* and the other is *repeat*.
+
+The JavaScript function ```setTimeOut()```, allows you to wait before a change happens or allows you to say how long you want a change to happen for.
+
+JavaScript handles time in milliseconds. So this will call ```destroyPlanets()``` after waiting for 5 second.
+
+```javascript
+setTimeout(destroyPlanets, 5000);
+```
+
+##Repetition
+The other timed behaviour, which we will use to move the planets, is *repetition*.
+
+In JavaScript the ```setInterval()``` function, allows you to say how often you want a change to happen.
+
+Again, time is in milliseconds. So this will call ```movePlanets()``` once every second.
+
+```javascript
+setInterval(movePlanets, 1000);
+```
+
+Click run - now our program says Hello quite a lot.
+
+
+##Task 6 - Variables
+
+Having all our notifications stack on top of each other isn't particularly lucky. In programming we have useful things called "variables" which are like little containers that you can put information into. We want to count how many seconds we've been running.
+
+At the top of your project, above your function write:
+```javascript
+var counter = 0;
+```
+
+This gives us a variable called "counter" which starts off at zero.
+
+Inside our movePlanet function, before console.log , we want to add 1 to it. We can do that by getting what's currently in the pot and adding one to it.
+
+```javascript
+counter = counter +1;
+```
+
+Now we can change our message to say:
+
+```javascript
+console.log("moving earth " + counter);
+```
+Click run - now our program says Hello and sticks the number of times it's said so beside it.
+
+##Task 7 - Waves
+
+Last few steps to actually move earth.
+
+First off, we need to make a function to calculate the x and y values for an orbit. Forunately, someone else already wrote that bit for us, so add these below your movePlanet function's end squigley bracket `}`:
+
+```javascript
+function calculateXPosition(degrees, sunX, orbitRadius) {
+    var velocity = degrees * (Math.PI /180);
+    return sunX + (orbitRadius * Math.cos(velocity));
+}
+
+function calculateYPosition(degrees, sunY, orbitRadius) {
+    var velocity = degrees * (Math.PI /180);
+    return sunY + (orbitRadius * Math.sin(velocity));
+}
+```
+
+**Try to understand what the parameters mean, as you will use these functions in your code.**
+
+Inside our movePlanet() function after you've added 1 to the counter, save earth's X and Y to a variable:
+```javascript
+var earthX = calculateXPosition(counter, 250, 150);
+var earthY = calculateYPosition(counter, 250, 150);
+console.log("earth x=" + earthX + " y = " + earthY);
+```
+
+**You will need to change the parameters passed to the X & Y positions, to match the values you have used for your orbits.**
+
+Finally, we need to tell our earth shape to move!
+```javascript
+$("#earth").attr("cx", earthX);
+$("#earth").attr("cy", earthY);
+```
+Click run - this should move our earth a little bit each second. Try playing around with the setInterval time, what happens when we change it to 500?
+
+##Task 8 - The Solar System
+
+We have looked at Earth (also known as Sol 3). See if you can make a realistic solar system:
+
+1. Put in the animation for all the planets
+2. Use different speeds for the size of orbit
+3. Add some moons to the planets
+
+##Task 9 - Finishing
+
+When you've finished totally - don't forget to save your JSFiddle and send us your link above.
+
+
+##Task 10 - Code for Improving
+
+![Imgur](http://i.imgur.com/6ebTEl0.png)
+
+```javascript
+var counter = 0;
+
+function movePlanets(){
+    
+    //increment the counter
+    counter = counter +1;
+    
+    //find x and y values for earth
+    var earthX = calculateXPosition(counter, 250, 150);
+    var earthY = calculateYPosition(counter, 250, 150);
+
+    //write out the current x and y values
+    console.log("earth x=" + earthX + " y = " + earthY);
+    
+    //update our earth shape.
+    $("#earth").attr("cx", earthX);
+    $("#earth").attr("cy", earthY);
+        
+}
+
+/*
+calculate the X value
+    degrees = number around the circle
+    sunX = the sun's current X value
+    orbitRadius = the radius the planet will travel around
+*/
+function calculateXPosition(degrees, sunX, orbitRadius) {
+    var velocity = degrees * (Math.PI /180);
+    return sunX + (orbitRadius * Math.cos(velocity));
+}
+
+/*
+calculate the Y value
+    degrees = number around the circle
+    sunY = the sun's current Y value
+    orbitRadius = the radius the planet will travel around
+*/
+function calculateYPosition(degrees, sunY, orbitRadius) {
+    var velocity = degrees * (Math.PI /180);
+    return sunY + (orbitRadius * Math.sin(velocity));
+}
+
+//run the movePlanets function every 500 milliseconds
+setInterval(movePlanets, 500);
+```
