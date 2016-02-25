@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spaceanimate by JohnReeves</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Spaceanimate</h1>
+      <h2 class="project-tagline">Move your planets with JavaScript.</h2>
+      <a href="https://github.com/JohnReeves/SpaceAnimate" class="btn">View on GitHub</a>
+      <a href="https://github.com/JohnReeves/SpaceAnimate/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/JohnReeves/SpaceAnimate/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="space-worksheet-2" class="anchor" href="#space-worksheet-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Space Worksheet 2</h1>
+
+<p><img src="http://i.imgur.com/GwVqsqt.png" alt="alt text" title="final image"></p>
+
+<h2>
+<a id="task-1---setup" class="anchor" href="#task-1---setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 1 - Setup</h2>
+
+<ul>
+<li>Either find your JSFiddle from last week (you need at least 1 planet to start this worksheet)</li>
+<li>Or use <a href="http://jsfiddle.net/Y662q/">my JSFiddle</a> (please open in a new tab in Google Chrome)</li>
+</ul>
+
+<p>Enable jQuery</p>
+
+<ul>
+<li>Top right - (Frameworks &amp; Extensions)</li>
+<li>(might need to scroll a lot!)</li>
+</ul>
+
+<p><img src="http://imgur.com/lFkeo3h.png" alt="alt text" title="turn on jQuery"></p>
+
+<h2>
+<a id="task-2---give-all-your-planet-shapes-ids" class="anchor" href="#task-2---give-all-your-planet-shapes-ids" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 2 - give all your planet shapes id's</h2>
+
+<p>We need to give all our planet shapes an id attribute so we can access them using JavaScript</p>
+
+<p>e.g. my earth shape looks like </p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">circle</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>earth<span class="pl-pds">"</span></span> <span class="pl-e">cx</span>=<span class="pl-s"><span class="pl-pds">"</span>250<span class="pl-pds">"</span></span> <span class="pl-e">cy</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">r</span>=<span class="pl-s"><span class="pl-pds">"</span>10<span class="pl-pds">"</span></span> <span class="pl-e">fill</span>=<span class="pl-s"><span class="pl-pds">"</span>green<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<h2>
+<a id="task-3---lets-start-with-the-console" class="anchor" href="#task-3---lets-start-with-the-console" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 3 - let's start with the console</h2>
+
+<ul>
+<li>in the little window below your HTML (should say JavaScript)</li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>hello world<span class="pl-pds">"</span></span>);</pre></div>
+
+<ul>
+<li>right click anywhere on your page - click Inspect Element</li>
+<li>View the last tab "Console"</li>
+<li>Click JSFiddle's Run button</li>
+</ul>
+
+<p><img src="http://imgur.com/nK8Nd7Q.png" alt="alt text" title="chrome's console"></p>
+
+<h2>
+<a id="task-4---functions" class="anchor" href="#task-4---functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 4 - Functions</h2>
+
+<p>In programming, we make things called functions which are just ways of grouping things together - for example you might have a function called <code>doHomework()</code> which would have things like <code>findBook</code> and <code>writeAnswers</code> in it.</p>
+
+<p>We're going to make a function say hello! to us!</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">movePlanets</span>(){
+
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>hello!<span class="pl-pds">"</span></span>);
+
+}
+</pre></div>
+
+<p>But wait! If we press run now, nothing happens? This is because we've not actually told the computer to run this function. We need to add the line <code>movePlanets();</code> below the squigley bracket. Now have a go at running it again!</p>
+
+<p>Try copying that one line of code and pasting it several times, what happens?</p>
+
+<h2>
+<a id="task-5---loops" class="anchor" href="#task-5---loops" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 5 - Loops</h2>
+
+<h2>
+<a id="timed-wait" class="anchor" href="#timed-wait" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Timed wait</h2>
+
+<p>There are two types of timed behaviour commonly used in animation, one is <em>wait</em> and the other is <em>repeat</em>.</p>
+
+<p>The JavaScript function <code>setTimeOut()</code>, allows you to wait before a change happens or allows you to say how long you want a change to happen for.</p>
+
+<p>JavaScript handles time in milliseconds. So this will call <code>destroyPlanets()</code> after waiting for 5 second.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">setTimeout</span>(destroyPlanets, <span class="pl-c1">5000</span>);</pre></div>
+
+<h2>
+<a id="repetition" class="anchor" href="#repetition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Repetition</h2>
+
+<p>The other timed behaviour, which we will use to move the planets, is <em>repetition</em>.</p>
+
+<p>In JavaScript the <code>setInterval()</code> function, allows you to say how often you want a change to happen.</p>
+
+<p>Again, time is in milliseconds. So this will call <code>movePlanets()</code> once every second.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">setInterval</span>(movePlanets, <span class="pl-c1">1000</span>);</pre></div>
+
+<p>Click run - now our program says Hello quite a lot.</p>
+
+<h2>
+<a id="task-6---variables" class="anchor" href="#task-6---variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 6 - Variables</h2>
+
+<p>Having all our notifications stack on top of each other isn't particularly lucky. In programming we have useful things called "variables" which are like little containers that you can put information into. We want to count how many seconds we've been running.</p>
+
+<p>At the top of your project, above your function write:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> <span class="pl-c1">0</span>;</pre></div>
+
+<p>This gives us a variable called "counter" which starts off at zero.</p>
+
+<p>Inside our movePlanet function, before console.log , we want to add 1 to it. We can do that by getting what's currently in the pot and adding one to it.</p>
+
+<div class="highlight highlight-source-js"><pre>counter <span class="pl-k">=</span> counter <span class="pl-k">+</span><span class="pl-c1">1</span>;</pre></div>
+
+<p>Now we can change our message to say:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>moving earth <span class="pl-pds">"</span></span> <span class="pl-k">+</span> counter);</pre></div>
+
+<p>Click run - now our program says Hello and sticks the number of times it's said so beside it.</p>
+
+<h2>
+<a id="task-7---waves" class="anchor" href="#task-7---waves" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 7 - Waves</h2>
+
+<p>Last few steps to actually move earth.</p>
+
+<p>First off, we need to make a function to calculate the x and y values for an orbit. Forunately, someone else already wrote that bit for us, so add these below your movePlanet function's end squigley bracket <code>}</code>:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">calculateXPosition</span>(<span class="pl-smi">degrees</span>, <span class="pl-smi">sunX</span>, <span class="pl-smi">orbitRadius</span>) {
+    <span class="pl-k">var</span> velocity <span class="pl-k">=</span> degrees <span class="pl-k">*</span> (<span class="pl-c1">Math</span>.<span class="pl-c1">PI</span> <span class="pl-k">/</span><span class="pl-c1">180</span>);
+    <span class="pl-k">return</span> sunX <span class="pl-k">+</span> (orbitRadius <span class="pl-k">*</span> <span class="pl-c1">Math</span>.<span class="pl-c1">cos</span>(velocity));
+}
+
+<span class="pl-k">function</span> <span class="pl-en">calculateYPosition</span>(<span class="pl-smi">degrees</span>, <span class="pl-smi">sunY</span>, <span class="pl-smi">orbitRadius</span>) {
+    <span class="pl-k">var</span> velocity <span class="pl-k">=</span> degrees <span class="pl-k">*</span> (<span class="pl-c1">Math</span>.<span class="pl-c1">PI</span> <span class="pl-k">/</span><span class="pl-c1">180</span>);
+    <span class="pl-k">return</span> sunY <span class="pl-k">+</span> (orbitRadius <span class="pl-k">*</span> <span class="pl-c1">Math</span>.<span class="pl-c1">sin</span>(velocity));
+}</pre></div>
+
+<p><strong>Try to understand what the parameters mean, as you will use these functions in your code.</strong></p>
+
+<p>Inside our movePlanet() function after you've added 1 to the counter, save earth's X and Y to a variable:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> earthX <span class="pl-k">=</span> <span class="pl-en">calculateXPosition</span>(counter, <span class="pl-c1">250</span>, <span class="pl-c1">150</span>);
+<span class="pl-k">var</span> earthY <span class="pl-k">=</span> <span class="pl-en">calculateYPosition</span>(counter, <span class="pl-c1">250</span>, <span class="pl-c1">150</span>);
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>earth x=<span class="pl-pds">"</span></span> <span class="pl-k">+</span> earthX <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> y = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> earthY);</pre></div>
+
+<p><strong>You will need to change the parameters passed to the X &amp; Y positions, to match the values you have used for your orbits.</strong></p>
+
+<p>Finally, we need to tell our earth shape to move!</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#earth<span class="pl-pds">"</span></span>).<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">"</span>cx<span class="pl-pds">"</span></span>, earthX);
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#earth<span class="pl-pds">"</span></span>).<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">"</span>cy<span class="pl-pds">"</span></span>, earthY);</pre></div>
+
+<p>Click run - this should move our earth a little bit each second. Try playing around with the setInterval time, what happens when we change it to 500?</p>
+
+<h2>
+<a id="task-8---the-solar-system" class="anchor" href="#task-8---the-solar-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 8 - The Solar System</h2>
+
+<p>We have looked at Earth (also known as Sol 3). See if you can make a realistic solar system:</p>
+
+<ol>
+<li>Put in the animation for all the planets</li>
+<li>Use different speeds for the size of orbit</li>
+<li>Add some moons to the planets</li>
+</ol>
+
+<h2>
+<a id="task-9---finishing" class="anchor" href="#task-9---finishing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 9 - Finishing</h2>
+
+<p>When you've finished totally - don't forget to save your JSFiddle and send us your link above.</p>
+
+<h2>
+<a id="task-10---code-for-improving" class="anchor" href="#task-10---code-for-improving" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task 10 - Code for Improving</h2>
+
+<p><img src="http://i.imgur.com/6ebTEl0.png" alt="Imgur"></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> counter <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+
+<span class="pl-k">function</span> <span class="pl-en">movePlanets</span>(){
+
+    <span class="pl-c">//increment the counter</span>
+    counter <span class="pl-k">=</span> counter <span class="pl-k">+</span><span class="pl-c1">1</span>;
+
+    <span class="pl-c">//find x and y values for earth</span>
+    <span class="pl-k">var</span> earthX <span class="pl-k">=</span> <span class="pl-en">calculateXPosition</span>(counter, <span class="pl-c1">250</span>, <span class="pl-c1">150</span>);
+    <span class="pl-k">var</span> earthY <span class="pl-k">=</span> <span class="pl-en">calculateYPosition</span>(counter, <span class="pl-c1">250</span>, <span class="pl-c1">150</span>);
+
+    <span class="pl-c">//write out the current x and y values</span>
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>earth x=<span class="pl-pds">"</span></span> <span class="pl-k">+</span> earthX <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> y = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> earthY);
+
+    <span class="pl-c">//update our earth shape.</span>
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#earth<span class="pl-pds">"</span></span>).<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">"</span>cx<span class="pl-pds">"</span></span>, earthX);
+    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#earth<span class="pl-pds">"</span></span>).<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">"</span>cy<span class="pl-pds">"</span></span>, earthY);
+
+}
+
+<span class="pl-c">/*</span>
+<span class="pl-c">calculate the X value</span>
+<span class="pl-c">    degrees = number around the circle</span>
+<span class="pl-c">    sunX = the sun's current X value</span>
+<span class="pl-c">    orbitRadius = the radius the planet will travel around</span>
+<span class="pl-c">*/</span>
+<span class="pl-k">function</span> <span class="pl-en">calculateXPosition</span>(<span class="pl-smi">degrees</span>, <span class="pl-smi">sunX</span>, <span class="pl-smi">orbitRadius</span>) {
+    <span class="pl-k">var</span> velocity <span class="pl-k">=</span> degrees <span class="pl-k">*</span> (<span class="pl-c1">Math</span>.<span class="pl-c1">PI</span> <span class="pl-k">/</span><span class="pl-c1">180</span>);
+    <span class="pl-k">return</span> sunX <span class="pl-k">+</span> (orbitRadius <span class="pl-k">*</span> <span class="pl-c1">Math</span>.<span class="pl-c1">cos</span>(velocity));
+}
+
+<span class="pl-c">/*</span>
+<span class="pl-c">calculate the Y value</span>
+<span class="pl-c">    degrees = number around the circle</span>
+<span class="pl-c">    sunY = the sun's current Y value</span>
+<span class="pl-c">    orbitRadius = the radius the planet will travel around</span>
+<span class="pl-c">*/</span>
+<span class="pl-k">function</span> <span class="pl-en">calculateYPosition</span>(<span class="pl-smi">degrees</span>, <span class="pl-smi">sunY</span>, <span class="pl-smi">orbitRadius</span>) {
+    <span class="pl-k">var</span> velocity <span class="pl-k">=</span> degrees <span class="pl-k">*</span> (<span class="pl-c1">Math</span>.<span class="pl-c1">PI</span> <span class="pl-k">/</span><span class="pl-c1">180</span>);
+    <span class="pl-k">return</span> sunY <span class="pl-k">+</span> (orbitRadius <span class="pl-k">*</span> <span class="pl-c1">Math</span>.<span class="pl-c1">sin</span>(velocity));
+}
+
+<span class="pl-c">//run the movePlanets function every 500 milliseconds</span>
+<span class="pl-c1">setInterval</span>(movePlanets, <span class="pl-c1">500</span>);</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/JohnReeves/SpaceAnimate">Spaceanimate</a> is maintained by <a href="https://github.com/JohnReeves">JohnReeves</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
